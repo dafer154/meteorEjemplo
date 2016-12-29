@@ -1,0 +1,53 @@
+<body>
+<div class="container">
+    <header>
+        <h1>Todo List ({{incompleteCount}})</h1>
+
+        <label class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+        </label>
+
+        {{> loginButtons}}
+
+        {{#if currentUser}}
+
+        <form class="new-task">
+            <input type="text" name="text" placeholder="Type to add new tasks" />
+        </form>
+
+        {{/if}}
+
+    </header>
+
+    <ul>
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
+    </ul>
+    <button>Enter</button>
+
+
+</div>
+</body>
+
+<!--Esta era una posibilidad de usar un template dentro de la pagina principal -->
+<!--<template name="task">
+    <li class="{{#if checked}}checked{{/if}}">
+        <button class="delete">&times;</button>
+
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+        <span class="text">{{text}}</span>
+    </li>
+</template>-->
+
+<!--<template name="task">-->
+    <!--<li>{{text}}</li>-->
+<!--</template>-->
+
+<!--Para llamar los datos de otro template -->
+<!--
+<template name="pru">
+     <li>{{text}}</li>
+</template>-->
